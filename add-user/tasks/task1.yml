@@ -1,0 +1,11 @@
+---
+
+- name: Добавляем пользователя testuser
+  user:
+      name: testuser
+      uid: 1005
+      shell: /bin/bash
+      group: users
+      home: /home/testuser
+
+

@@ -1,0 +1,15 @@
+---
+
+- name: Создание каталогов на удаленном сервере
+  file:
+      path: "{{ item }}"
+      state: directory
+      owner: testuser
+      mode: 0750
+  loop:
+      - /home/testuser/app/bin
+      - /home/testuser/app/conf
+
+
+
+

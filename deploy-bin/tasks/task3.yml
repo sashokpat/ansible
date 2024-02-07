@@ -1,0 +1,27 @@
+---
+- name: Копирование файлов на удаленный сервер c 2 proc
+  copy:
+      src: "{{ item }}"
+      dest:  /home/testuser/app/bin
+      remote_src: no
+      owner: testuser
+      mode: 0750
+  loop:
+      - multisocket.bin
+  when: ansible_facts['processor_nproc'] == 2
+
+- name: Копирование файлов на удаленный сервер c 1 proc
+  copy:
+      src: "{{ item }}"
+      dest:  /home/testuser/app/bin
+      remote_src: no
+      owner: testuser
+      mode: 0750
+  loop:
+      - singlesocket.bin
+  when: ansible_facts['processor_nproc'] == 1
+      
+
+
+
+

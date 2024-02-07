@@ -1,0 +1,16 @@
+---
+
+- name: Копирование файлов на удаленный сервер
+  copy:
+      src: "{{ item }}"
+      dest:  /home/testuser/app/conf
+      remote_src: no
+      owner: testuser
+      mode: 0750
+  loop:
+      - web.conf
+      - app.conf
+
+
+
+

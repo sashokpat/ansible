@@ -1,0 +1,15 @@
+---
+
+- name: Выдаем sudo права testuser
+  user:
+      name: testuser
+      groups: sudo
+      append: true
+      state: present
+- name: Делаем sudo для testuser беcпарольным
+  copy:
+      dest: /etc/sudoers.d/80-ansible-sudo-user
+      content: "testuser ALL=(ALL) NOPASSWD:ALL"
+      mode: 0440
+
+

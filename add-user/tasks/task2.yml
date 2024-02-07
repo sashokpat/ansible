@@ -1,0 +1,19 @@
+---
+
+- name: Создаем ssh-ключ для testuser
+  user:
+      name: testuser
+      generate_ssh_key: true
+
+- name: Копирование публичного ssh-ключа на удаленный сервер
+  authorized_key:
+      user: testuser
+      state: present
+      key: "{{ item }}"
+  with_file:
+      - id_rsa.pub
+
+
+
+
+
