@@ -1,5 +1,5 @@
 - name: Конфигурирование web-сервера
-  hosts: all
+  hosts: ngx-webserver
   become: yes
   roles:
     - prepare-disk
