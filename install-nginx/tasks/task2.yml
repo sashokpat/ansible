@@ -1,0 +1,9 @@
+---
+
+- name: Добавляем пользователя
+  user:
+    name: "{{user_nginx}}"
+    group: root
+    state: present
+
+

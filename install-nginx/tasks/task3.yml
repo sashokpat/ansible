@@ -1,0 +1,23 @@
+---
+
+- name: Установка переменной окружения
+  lineinfile:
+    path: /etc/environment
+    line: NGINX_CONF_DIR="/etc/nginx"
+    state: present
+
+- name: Создаем папку
+  file: 
+    path: /etc/nginx
+    state: directory
+    owner: "{{user_nginx}}"
+    mode: 0700
+
+- name: Копируем шаблоны
+  copy:
+    src: "{{item}}"
+    dest: /etc/nginx
+    owner: "{{user_nginx}}"
+    mode: 0600
+  with_fileglob:
+    - "templates/nginx/*"

@@ -1,0 +1,14 @@
+---
+
+- name: Монтирование раздела
+  mount:
+      path: /data
+      src: LABEL=ML3
+      fstype: ext4
+      state: mounted
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+---
+  
+  name_disk: /dev/sdb
+  name_part: /dev/sdb1
+  registry_nginx: https://nginx.org/download/nginx-1.25.4.zip
+  user_nginx: nginx

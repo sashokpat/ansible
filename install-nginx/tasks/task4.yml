@@ -1,0 +1,11 @@
+---
+
+- name: Демонизируем nginx
+  systemd_service:
+    state: started
+    name: nginx
+  environment:
+    NGINX_CONF_DIR: "/etc/nginx"
+
+
+

@@ -1,0 +1,21 @@
+---
+
+- name: Создание раздела
+  parted:
+        device: "{{ name_disk }}"
+        label: gpt
+        number: 1
+        part_start: "0%"
+        part_end: "100%"
+        state: present
+- name: Форматирование раздела
+  filesystem: 
+        dev: /dev/sdb1
+        fstype: ext4
+- name: Ставим метку
+  shell: tune2fs -L "ML3" "{{ name_part }}"
+
+
+
+
+

@@ -1,0 +1,22 @@
+---
+
+- name: разрешаем протокол http
+  community.general.ufw:
+    rule: allow
+    direction: in
+    port: '80'
+    proto: tcp
+    
+- name: разрешаем протокол https
+  community.general.ufw:
+    rule: allow
+    direction: in
+    port: '443'
+    proto: tcp
+    
+
+
+
+
+
+

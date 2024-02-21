@@ -1,0 +1,7 @@
+- name: Конфигурирование web-сервера
+  hosts: all
+  become: yes
+  roles:
+    - prepare-disk
+    - configure-firewall
+    - install-nginx

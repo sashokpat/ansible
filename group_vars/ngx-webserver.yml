@@ -1,0 +1,6 @@
+---
+  
+  name_disk: /dev/sdb
+  name_part: /dev/sdb1
+  registry_nginx: https://example.com/registry/nginx_1.0.0
+  user_nginx: nginx

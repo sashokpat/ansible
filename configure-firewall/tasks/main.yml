@@ -1,0 +1,4 @@
+---
+# tasks file for configure-firewall
+- include_tasks: task1.yml
+- include_tasks: task2.yml

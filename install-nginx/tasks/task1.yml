@@ -1,0 +1,8 @@
+---
+
+- name: Скачивание nginx
+  get_url:
+    url: "{{registry_nginx}}"
+    dest: /usr/local/bin
+    mode: '0755'
+
